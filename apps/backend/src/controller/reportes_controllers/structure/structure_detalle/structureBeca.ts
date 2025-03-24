@@ -1,13 +1,12 @@
-import { StructureAndData, StructureColumn, ReporteBeca } from "@shared/reportsType";
+import { StructureAndData, StructureColumn, ReporteBecaType, PaginationType } from "@shared/reportsType";
 
-const columnsBeca: StructureColumn<ReporteBeca>[] = [
+const columnsBeca: StructureColumn<ReporteBecaType>[] = [
   { 
-    name : "idEstudiante", 
+    name : "id_estudiante", 
     label: "ID Estudiante",
-    type : "number"
   },
   { 
-    name : "nombreEstudiante", 
+    name : "nombre_estudiante", 
     label: "Nombre del Estudiante"
   },
   { 
@@ -19,16 +18,16 @@ const columnsBeca: StructureColumn<ReporteBeca>[] = [
     label: "Sección"
   },
   { 
-    name : "fechaAdmision", 
+    name : "fecha_admision", 
     label: "Fecha de Admisión",
     type : "date"
   },
   { 
-    name : "tipoBeneficio", 
+    name : "tipo_beneficio", 
     label: "Tipo de Beneficio"
   },
   { 
-    name : "porcentajeBeneficio", 
+    name : "porcentaje_beneficio", 
     label: "Porcentaje de Beneficio"
   },
   { 
@@ -37,8 +36,9 @@ const columnsBeca: StructureColumn<ReporteBeca>[] = [
   }
 ];
 
-export const becaStructure: StructureAndData<ReporteBeca> = {
+export const becaStructure: StructureAndData<ReporteBecaType> = {
   title  : "Reporte de Becas y Descuentos",
   columns: columnsBeca,
-  data   : [] as ReporteBeca[]
+  data   : [] as ReporteBecaType[],
+  pagination: { limit: 0, offset: 0, count: 0, total: 0 } // <-- Aquí inicializado
 };
