@@ -5,6 +5,8 @@ const EnvFilePath = resolve(process.cwd(), ".env");
 
 config({path: EnvFilePath});
 
+console.log("Variables de entorno cargadas:", process.env);
+
 function getEnvVar(name: string, fallback?: string): string 
 {
     const value = process.env[name] || fallback;
